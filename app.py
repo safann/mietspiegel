@@ -13,10 +13,10 @@ from dash.dependencies import Input, Output
 
 app = dash.Dash(__name__)
 
-df_beschr = pd.read_csv("beschreibung.csv")
-df_bez = pd.read_csv("bezdata.csv")
-df_mietsp = pd.read_csv("mietspiegel.csv")
-with open('muenchen.geo.json') as f:
+df_beschr = pd.read_csv("data/beschreibung.csv")
+df_bez = pd.read_csv("data/bezdata.csv")
+df_mietsp = pd.read_csv("data/mietspiegel.csv")
+with open('data/muenchen.geo.json') as f:
     geojson = json.load(f)
 
 
