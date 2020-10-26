@@ -12,6 +12,7 @@ from dash.dependencies import Input, Output
 
 
 app = dash.Dash(__name__)
+server = app.server
 
 df_beschr = pd.read_csv("data/beschreibung.csv")
 df_bez = pd.read_csv("data/bezdata.csv")
@@ -91,4 +92,5 @@ def update_figure(option_slctd):
     return container, fig, fig2
 
 
-app.run_server()
+if __name__ == '__main__':
+    app.run_server()
