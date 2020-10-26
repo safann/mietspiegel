@@ -5,14 +5,13 @@ import pandas as pd
 import plotly.express as px
 import json
 
-from jupyter_dash import JupyterDash
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
 
-app = JupyterDash(__name__)
+app = dash.Dash(__name__)
 
 df_beschr = pd.read_csv("beschreibung.csv")
 df_bez = pd.read_csv("bezdata.csv")
@@ -92,4 +91,4 @@ def update_figure(option_slctd):
     return container, fig, fig2
 
 
-app.run_server(port=8051, debug=True)
+app.run_server()
